@@ -97,6 +97,29 @@ main {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100px;
+    padding: 1.1rem 1rem;
+    border-radius: 18px;
+    border: 1.5px solid #b3d0e6;
+    background: linear-gradient(135deg, #fafdff 80%, #eafaf1 100%);
+    box-shadow: 0 4px 24px 0 rgba(42,77,105,0.07);
+    font-size: 1.08rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--primary-color);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    resize: vertical;
+    margin-bottom: 1.2rem;
+}
+.reflection-text:focus {
+    border: 1.5px solid #7bb7e6;
+    box-shadow: 0 6px 32px 0 rgba(42,77,105,0.13);
+    background: linear-gradient(135deg, #f0f8ff 80%, #eafaf1 100%);
+}
+.reflection-text::placeholder {
+    color: #a0b7c8;
+    opacity: 1;
+    font-style: italic;
 }
 
 button, .btn {
