@@ -1,0 +1,233 @@
+/* Calming color palette */
+:root {
+    --primary-bg: #e6f2fb;
+    --secondary-bg: #eafaf1;
+    --accent-bg: #f5f7fa;
+    --primary-color: #2a4d69;
+    --button-bg: #b3e6ff;
+    --button-hover: #a0d8ef;
+    --danger-bg: #ffb3b3;
+    --danger-hover: #ff9999;
+    --success-bg: #b3ffcc;
+    --success-color: #26734d;
+    --border-radius: 12px;
+    --transition: 0.2s;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    min-height: 100vh;
+}
+
+header {
+    background: var(--accent-bg);
+    padding: 1rem 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(42,77,105,0.04);
+    position: relative;
+}
+
+#main-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+nav {
+    margin-bottom: 0.5rem;
+}
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    transition: background var(--transition);
+}
+nav a:hover, nav a.active {
+    background: var(--button-hover);
+}
+
+main {
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+    background: var(--secondary-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 16px rgba(42,77,105,0.06);
+    padding: 2rem 1rem 1.5rem 1rem;
+}
+
+.mood-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.mood-btn {
+    font-size: 2rem;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+    transition: border var(--transition), background var(--transition);
+}
+.mood-btn.selected {
+    border: 2px solid var(--primary-color);
+    background: var(--button-bg);
+}
+.mood-btn:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.reflect-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.reflection-text {
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button, .btn {
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.7rem 1.5rem;
+    background: var(--button-bg);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+button:disabled, .btn:disabled {
+    background: #e0e0e0;
+    color: #b0b0b0;
+    cursor: not-allowed;
+}
+button:hover:not(:disabled), .btn:hover:not(:disabled) {
+    background: var(--button-hover);
+}
+
+.confirmation {
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-radius: var(--border-radius);
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(38,115,77,0.04);
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.history-item {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 6px rgba(42,77,105,0.04);
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.history-mood {
+    font-size: 2rem;
+    margin-right: 0.7rem;
+}
+.history-content {
+    flex: 1 1 60%;
+    word-break: break-word;
+}
+.history-date {
+    font-size: 0.95rem;
+    color: #6a8ca4;
+    margin-top: 0.3rem;
+}
+.delete-btn {
+    background: var(--danger-bg);
+    color: #a10000;
+    margin-left: 1rem;
+    transition: background var(--transition);
+}
+.delete-btn:hover {
+    background: var(--danger-hover);
+}
+.clear-all-btn {
+    background: var(--danger-bg);
+    color: #a10000;
+    margin: 1rem 0 0.5rem 0;
+    width: 100%;
+}
+.clear-all-btn:hover {
+    background: var(--danger-hover);
+}
+
+.discord-link {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 0.3rem 1rem;
+    background: #e6eaff;
+    color: #5865F2;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(88,101,242,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.discord-link:hover, .discord-link:focus {
+    background: #5865F2;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(88,101,242,0.18);
+}
+
+@media (max-width: 600px) {
+    main {
+        max-width: 98vw;
+        padding: 1rem 0.3rem 1rem 0.3rem;
+    }
+    .mood-section {
+        gap: 0.2rem;
+    }
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .reflection-text {
+        width: 98%;
+        max-width: 98vw;
+    }
+    .reflect-section {
+        min-height: 40vh;
+    }
+    .discord-link {
+        top: 10px;
+        right: 10px;
+        font-size: 0.95rem;
+        padding: 0.2rem 0.7rem;
+    }
+} 
