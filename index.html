@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReflectBack</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReflectBack</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1 id="main-title">ReflectBack</h1>
-        <nav>
-            <a href="index.html" id="reflect-link">Reflect</a>
-            <a href="history.html" id="history-link">History</a>
-        </nav>
-        <a href="https://discord.gg/qRVYKVzE2E" class="discord-link" aria-label="Join our Discord" target="_blank" rel="noopener">Discord</a>
-    </header>
-    <main id="page-content">
-        <!-- Content will be loaded here -->
-    </main>
-    <script src="script.js"></script>
+  <header>
+    <h1 id="main-title">ReflectBack</h1>
+    <nav>
+      <a href="index.html" id="reflect-link">Reflect</a>
+      <a href="history.html" id="history-link">History</a>
+    </nav>
+    <a href="https://discord.gg/qRVYKVzE2E" class="discord-link" target="_blank">Discord</a>
+  </header>
+
+  <main>
+    <section class="reflect-section" aria-labelledby="reflect-title">
+      <h2 id="reflect-title" style="text-align:center;">How are you feeling today?</h2>
+      <div class="mood-section" role="radiogroup" aria-label="Mood selection">
+        <button class="mood-btn" aria-label="Happy" data-mood="😊">😊</button>
+        <button class="mood-btn" aria-label="Neutral" data-mood="😐">😐</button>
+        <button class="mood-btn" aria-label="Sad" data-mood="😢">😢</button>
+        <button class="mood-btn" aria-label="Angry" data-mood="😠">😠</button>
+        <button class="mood-btn" aria-label="Loved" data-mood="😍">😍</button>
+      </div>
+      <textarea id="reflection-text" class="reflection-text" placeholder="How are you feeling today?" rows="4" aria-label="Reflection"></textarea>
+      <button id="save-btn" disabled>Save</button>
+      <div id="confirmation" class="confirmation" style="display:none;"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Directly call renderReflectPage without dynamic routing
+    renderReflectPage();
+  </script>
 </body>
-</html> 
+</html>
