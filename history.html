@@ -15,9 +15,16 @@
         </nav>
         <a href="https://discord.gg/qRVYKVzE2E" class="discord-link" aria-label="Join our Discord" target="_blank" rel="noopener">Discord</a>
     </header>
-    <main id="page-content">
-        <!-- Content will be loaded here -->
+    <main>
+        <section aria-labelledby="history-title">
+            <h2 id="history-title" style="text-align:center;">Reflection History</h2>
+            <button class="clear-all-btn" id="clear-all-btn">Clear All</button>
+            <ul class="history-list" id="history-list"></ul>
+        </section>
     </main>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', renderHistoryPage);
+    </script>
 </body>
 </html> 
